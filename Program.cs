@@ -13,14 +13,14 @@ namespace StockTrading
 
             CustumerDetails c = new CustumerDetails();
             
-            /*
+            
 
             //create Customers
             c.AddCustomer("karli", 100, 101);
-            c.AddCustomer("kar", 101, 102);
+            c.AddCustomer("raju", 101, 102);
 
             //Read Customers
-            
+            /*
             ArrayList raju =  c.readCustomerDetails();
 
             foreach (Customer item in raju)
@@ -29,10 +29,21 @@ namespace StockTrading
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.AccountNumber);
                 Console.WriteLine(item.FundBalance);
+                if (item.custTransactions == null)
+                {
+                    Console.WriteLine("Array is Empty");
+                }
+                else
+                {
+                    foreach (Transactions subItem in item.custTransactions)
+                    {
+                        Console.WriteLine(subItem.DateTAndime);
+                    }
+                }
                 Console.WriteLine("_ _ _ _");
             }
-            
-
+            */
+            /*
             //Update Customers
             c.UpdateCustomer(2, "Raju", 1000);
 
@@ -110,13 +121,14 @@ namespace StockTrading
 
             TranscationsDetails tr = new TranscationsDetails();
 
-            //create TickerPrice
+            //create Transactions
 
             tr.AddTransactionDetails(true, 0, 200, 2, "2020-01-01 07:30",1);
             tr.AddTransactionDetails(false, 0, 300, 2, "2020-01-01 08:30",1);
 
-            //Read TickerPrice
+            //Read Transactions
 
+            /*
             ArrayList rajtr = tr.arrTransaction;
 
             foreach (Transactions item in rajtr)
@@ -130,8 +142,32 @@ namespace StockTrading
                 Console.WriteLine(item.cust_id);
                 Console.WriteLine("_ _ _ _");
             }
+            */
+            //Read Customers
 
+            /*
+            ArrayList raju = c.readCustomerDetails();
 
+            foreach (Customer item in raju)
+            {
+                Console.WriteLine("\n" + item.Id);
+                Console.WriteLine(item.Name);
+                Console.WriteLine(item.AccountNumber);
+                Console.WriteLine(item.FundBalance);
+                if (item.custTransactions == null)
+                {
+                    Console.WriteLine("Array is Empty");
+                }
+                else
+                {
+                    foreach (Transactions subItem in item.custTransactions)
+                    {
+                        Console.WriteLine(subItem.DateTAndime);
+                    }
+                }
+                Console.WriteLine("_ _ _ _");
+            }
+            */
             Console.ReadKey();
         }
     }

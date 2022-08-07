@@ -14,7 +14,7 @@ namespace Stocks
         public int AccountNumber { get; set; }
         public double FundBalance { get; set; }
 
-        public ArrayList Transactions { get; set; }
+        public ArrayList custTransactions { get; set; }
     }
 
 }

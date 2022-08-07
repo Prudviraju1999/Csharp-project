@@ -17,8 +17,7 @@ namespace StockTrading
                 Id = arrCustomers.Count,
                 Name = name,
                 AccountNumber = accountNumber,
-                FundBalance = fundBalance,
-
+                FundBalance = fundBalance
             };
             arrCustomers.Add(customer);
         }

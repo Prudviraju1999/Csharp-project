@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stocks
 {
-    public class Transactions : Base
+    public class Transactions: Base
     {
         public bool Type { get; set; }
         public int TickerId { get; set; }
