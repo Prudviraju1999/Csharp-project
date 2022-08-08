@@ -1,34 +1,37 @@
 ﻿using Stocks;
 using System.Collections;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StockTrading
 {
     public class CustumerDetails
     {
-        public ArrayList arrCustomers = new ArrayList();
-
+        public List<Customer> Customers = new List<Customer>();
         
-        public void AddCustomer(string name, int accountNumber, double fundBalance)
-        {
-            
+        public void AddCustomer(string name, 
+                                int accountNumber, 
+                                double fundBalance)
+        {            
             Customer customer = new Customer
             {
-                Id = arrCustomers.Count,
+                Id = Customers.Count + 1,
                 Name = name,
                 AccountNumber = accountNumber,
                 FundBalance = fundBalance
             };
-            arrCustomers.Add(customer);
+            Customers.Add(customer);
         }
-        public ArrayList readCustomerDetails()
+
+        public List<Customer> ReadCustomerDetails()
         {
-            return arrCustomers;
+            return Customers;
         }
 
         public void UpdateCustomer(int id, string name, double fundBalance)
         {
-            foreach (Customer item in arrCustomers)
+            foreach (Customer item in Customers)
             {
                 if (item.Id == id)
                 {
@@ -38,21 +41,58 @@ namespace StockTrading
             }
         }
 
-        public void deleteCust(int id)
+        public void DeleteCust(int id)
         {
             int idx = -1;
-            foreach (Customer item in arrCustomers)
+
+            //Customer c = Customers.Where(m => m.Id == id).FirstOrDefault();
+            //Customers.Remove(c);
+
+            foreach (Customer item in Customers)
             {
                 if (item.Id == id)
                 {
-                    idx = arrCustomers.IndexOf(item);
+                    idx = Customers.IndexOf(item);
                 }
             }
             if (idx != -1)
             {
-                arrCustomers.RemoveAt(idx);
+                Customers.RemoveAt(idx);
             }
             
+        }
+
+        public bool AddCustomerTransaction(int customerId, 
+                                            bool isBuy, 
+                                            int tickerId, 
+                                            double cost, 
+                                            int quantity, 
+                                            DateTime dateAndTime)
+        {
+            bool isSuccessful = true;
+
+            foreach (Customer c in Customers)
+            {
+                if (c.Id == customerId)
+                {
+                    try
+                    {
+                        c.Transactions.Add(new TransactionsDetails().GetTransactionsObject(isBuy,
+                                                                                            tickerId,
+                                                                                            cost,
+                                                                                            quantity,
+                                                                                            dateAndTime));
+
+                    }
+                    catch
+                    {
+                        isSuccessful = false;
+                    }
+                    break;
+                }
+            }
+
+            return isSuccessful;
         }
 
     }

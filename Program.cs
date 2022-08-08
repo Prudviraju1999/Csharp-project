@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Stocks;
+using System.Collections.Generic;
 
 namespace StockTrading
 {
@@ -13,36 +14,18 @@ namespace StockTrading
 
             CustumerDetails c = new CustumerDetails();
             
-            
-
             //create Customers
             c.AddCustomer("karli", 100, 101);
             c.AddCustomer("raju", 101, 102);
 
-            //Read Customers
-            /*
-            ArrayList raju =  c.readCustomerDetails();
+            // Add Customer Transactions
+            c.AddCustomerTransaction(1,true, 0, 200, 2, Convert.ToDateTime("2020-01-01 02:30"));
+            c.AddCustomerTransaction(1, false, 0, 200, 2, Convert.ToDateTime("2022-01-01 02:45"));
+            c.AddCustomerTransaction(2, false, 0, 200, 2, Convert.ToDateTime("2022-01-01 03:30"));
+            c.AddCustomerTransaction(2, false, 0, 200, 2, Convert.ToDateTime("2022-01-01 03:40"));
+            c.AddCustomerTransaction(2, false, 0, 200, 2, Convert.ToDateTime("2022-01-01 03:50"));
 
-            foreach (Customer item in raju)
-            {
-                Console.WriteLine("\n"+item.Id);
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.AccountNumber);
-                Console.WriteLine(item.FundBalance);
-                if (item.custTransactions == null)
-                {
-                    Console.WriteLine("Array is Empty");
-                }
-                else
-                {
-                    foreach (Transactions subItem in item.custTransactions)
-                    {
-                        Console.WriteLine(subItem.DateTAndime);
-                    }
-                }
-                Console.WriteLine("_ _ _ _");
-            }
-            */
+            
             /*
             //Update Customers
             c.UpdateCustomer(2, "Raju", 1000);
@@ -119,12 +102,7 @@ namespace StockTrading
             // Transactions  *******************************************************************
             // Create, Read test
 
-            TranscationsDetails tr = new TranscationsDetails();
-
-            //create Transactions
-
-            tr.AddTransactionDetails(true, 0, 200, 2, "2020-01-01 07:30",1);
-            tr.AddTransactionDetails(false, 0, 300, 2, "2020-01-01 08:30",1);
+            TransactionsDetails tr = new TransactionsDetails();
 
             //Read Transactions
 
@@ -143,10 +121,11 @@ namespace StockTrading
                 Console.WriteLine("_ _ _ _");
             }
             */
-            //Read Customers
 
-            /*
-            ArrayList raju = c.readCustomerDetails();
+
+            //Read Customers with transactions
+
+            List<Customer> raju = c.ReadCustomerDetails();
 
             foreach (Customer item in raju)
             {
@@ -154,20 +133,21 @@ namespace StockTrading
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.AccountNumber);
                 Console.WriteLine(item.FundBalance);
-                if (item.custTransactions == null)
+               
+                if (item.Transactions == null)
                 {
                     Console.WriteLine("Array is Empty");
                 }
                 else
                 {
-                    foreach (Transactions subItem in item.custTransactions)
+                    foreach (Transactions subItem in item.Transactions)
                     {
                         Console.WriteLine(subItem.DateTAndime);
                     }
                 }
                 Console.WriteLine("_ _ _ _");
             }
-            */
+            
             Console.ReadKey();
         }
     }
