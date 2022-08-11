@@ -41,7 +41,7 @@ namespace StockTrading
 
             TickerDetails t = new TickerDetails();
 
-            /*
+            
 
             //create Tickers
             t.AddTickerDetails("Reliance", "2020-01-01", 101);
@@ -59,7 +59,7 @@ namespace StockTrading
                 Console.WriteLine(item.Cust_Id);
                 Console.WriteLine("_ _ _ _");
             }
-
+            /*
             //Update Tickers
             t.UpdateTicker(1, "JIO", "1999-01-01", 101);
 

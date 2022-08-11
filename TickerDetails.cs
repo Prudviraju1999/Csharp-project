@@ -11,7 +11,7 @@ namespace StockTrading
         {
             Ticker tickerDetails = new Ticker()
             {
-                Id = arrTickers.Count,
+                Id = arrTickers.Count + 1,
                 Name = name,
                 DateListed = Convert.ToDateTime(listedDate),
                 Cust_Id = customerId

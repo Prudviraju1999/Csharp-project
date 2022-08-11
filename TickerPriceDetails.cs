@@ -11,7 +11,7 @@ namespace StockTrading
         {
             TickerPrice tickerPrice = new TickerPrice()
             {
-                Id = arrTickerPrice.Count,
+                Id = arrTickerPrice.Count + 1,
                 Price = tickerPriceOne,
                 TickerDateTime = Convert.ToDateTime(tickerTime),
                 TickerId = tickerId,
