@@ -41,7 +41,7 @@ namespace StockTrading
             }
         }
 
-        public void DeleteCust(int id)
+        public void DeleteCustomer(int id)
         {
             int idx = -1;
 
@@ -82,7 +82,6 @@ namespace StockTrading
                                                                                             cost,
                                                                                             quantity,
                                                                                             dateAndTime));
-
                     }
                     catch
                     {
@@ -91,7 +90,6 @@ namespace StockTrading
                     break;
                 }
             }
-
             return isSuccessful;
         }
 

@@ -7,7 +7,9 @@ namespace StockTrading
     class TickerDetails
     {
         public ArrayList arrTickers = new ArrayList();
-        public void AddTickerDetails(string name, string listedDate, int customerId)
+        public void AddTickerDetails(string name, 
+                                     string listedDate, 
+                                     int customerId)
         {
             Ticker tickerDetails = new Ticker()
             {
@@ -19,12 +21,15 @@ namespace StockTrading
             arrTickers.Add(tickerDetails);
         }
 
-        public ArrayList readTickerDetails()
+        public ArrayList ReadTickerDetails()
         {
             return arrTickers;
         }
 
-        public void UpdateTicker(int id, string name, string dateListed, int cust_Id )
+        public void UpdateTicker(int id, 
+                                 string name, 
+                                 string dateListed, 
+                                 int cust_Id )
         {
             foreach (Ticker item in arrTickers)
             {
@@ -37,7 +42,7 @@ namespace StockTrading
             }
         }
 
-        public void deleteTicker(int id)
+        public void DeleteTicker(int id)
         {
             int idx = -1;
             foreach (Ticker item in arrTickers)

@@ -7,19 +7,22 @@ namespace StockTrading
     class TickerPriceDetails
     {
         public ArrayList arrTickerPrice = new ArrayList();
-        public void AddTickerPriceDetails(int tickerPriceOne, string tickerTime, int tickerId)
+        public void AddTickerPriceDetails(string tickerTime, 
+                                          int tickerId)
         {
             TickerPrice tickerPrice = new TickerPrice()
             {
                 Id = arrTickerPrice.Count + 1,
-                Price = tickerPriceOne,
                 TickerDateTime = Convert.ToDateTime(tickerTime),
                 TickerId = tickerId,
             };
             arrTickerPrice.Add(tickerPrice);
         }
 
-        public void UpdateTickerPrice(int id, int tickerPriceOne, string tickerTime, int tickerId)
+        public void UpdateTickerPrice(int id, 
+                                      int tickerPriceOne, 
+                                      string tickerTime, 
+                                      int tickerId)
         {
             foreach (TickerPrice item in arrTickerPrice)
             {

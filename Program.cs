@@ -11,9 +11,11 @@ namespace StockTrading
         {
             //Customer *****************************************************************
             //Func Check [CRUD]
-
-            CustumerDetails c = new CustumerDetails();
             
+            CustumerDetails c = new CustumerDetails();
+
+            /*
+
             //create Customers
             c.AddCustomer("karli", 100, 101);
             c.AddCustomer("raju", 101, 102);
@@ -26,14 +28,14 @@ namespace StockTrading
             c.AddCustomerTransaction(2, false, 0, 200, 2, Convert.ToDateTime("2022-01-01 03:50"));
 
             
-            /*
+            
             //Update Customers
             c.UpdateCustomer(2, "Raju", 1000);
 
             //Delete Customers
-            c.deleteCust(1);
+            //c.deleteCust(2);
 
-
+            
     */
 
             //Ticker   *****************************************************************************
@@ -41,7 +43,7 @@ namespace StockTrading
 
             TickerDetails t = new TickerDetails();
 
-            
+            /*
 
             //create Tickers
             t.AddTickerDetails("Reliance", "2020-01-01", 101);
@@ -59,7 +61,7 @@ namespace StockTrading
                 Console.WriteLine(item.Cust_Id);
                 Console.WriteLine("_ _ _ _");
             }
-            /*
+            
             //Update Tickers
             t.UpdateTicker(1, "JIO", "1999-01-01", 101);
 
@@ -72,13 +74,14 @@ namespace StockTrading
             // Create, Update test
 
             TickerPriceDetails tp = new TickerPriceDetails();
-
-            /*
+            
+            
+            
 
             //create TickerPrice
 
-            tp.AddTickerPriceDetails(100,"2020-01-01 07:30",1);
-            tp.AddTickerPriceDetails(200, "2020-01-01 08:30", 2);
+            tp.AddTickerPriceDetails("2020-01-01 07:30",1);
+            tp.AddTickerPriceDetails("2020-01-01 08:30", 2);
 
             //Read TickerPrice
 
@@ -86,17 +89,15 @@ namespace StockTrading
 
             foreach (TickerPrice item in rajtp)
             {
-                Console.WriteLine("\n" + item.Id);
-                Console.WriteLine(item.Price);
+                Console.WriteLine("\n" + item.Id);                
                 Console.WriteLine(item.TickerDateTime);
                 Console.WriteLine(item.TickerId);
-                Console.WriteLine("_ _ _ _");
             }
-
+            /*
             //Update TickerPrice
             tp.UpdateTickerPrice(1, 220, "2020-01-01 08:30", 2);
-
-    */
+            
+                */
 
 
             // Transactions  *******************************************************************
@@ -120,8 +121,8 @@ namespace StockTrading
                 Console.WriteLine(item.cust_id);
                 Console.WriteLine("_ _ _ _");
             }
-            */
-
+            
+    
 
             //Read Customers with transactions
 
@@ -147,7 +148,7 @@ namespace StockTrading
                 }
                 Console.WriteLine("_ _ _ _");
             }
-            
+            */
             Console.ReadKey();
         }
     }

@@ -13,6 +13,6 @@ namespace Stocks
         public double Cost { get; set; }
         public int Quantity { get; set; }
         public DateTime DateTAndime { get; set; }
-        public int cust_id { get; set; }
+        public int CustomerId { get; set; }
     }
 }
